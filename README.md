@@ -15,4 +15,4 @@ A python project to implement CRUD operations on recipes
 3. Go to the browser and enter this URL to view the home page: "localhost:5000"
 
 # Home Page
-https://github.com/aerande/Recipe-Application/issues/1#issue-356880065
+https://user-images.githubusercontent.com/25068089/45043502-eb758100-b032-11e8-9467-1dc13fccf4e3.png
