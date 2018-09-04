@@ -16,3 +16,6 @@ A python project to implement CRUD operations on recipes
 
 # Home Page
 ![image](https://user-images.githubusercontent.com/25068089/45043622-52933580-b033-11e8-97b7-397932993cc9.png)
+
+# View Page
+![image](https://user-images.githubusercontent.com/25068089/45043748-ab62ce00-b033-11e8-8e8d-69f5ef18e65b.png)
