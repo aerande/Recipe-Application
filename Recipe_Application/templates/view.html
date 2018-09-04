@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for recipe in recipes %}
+       <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+                <p class="mr-2" style="font-size: 25px; font-family: 'Comic Sans MS', cursive, sans-serif; color: blue;">{{ recipe.category }}</p>
+                <small class="text-muted mr-2">Created on: {{ recipe.date_added }}</small>
+                <small class="text-muted mr-2">Last Modified: {{ recipe.date_modified }}</small>
+            </div>
+            <h2>{{ recipe.recipe_name }}</h2>
+            <p class="article-content" style="font-size: 15px;">{{ recipe.notes }}</p>
+              <p><b>What you need:</b> {{ recipe.ingredients }}</p>
+              <p><b>How to make:</b> {{ recipe.instructions }}</p>
+              <p><b>This serves: </b>{{ recipe.serving_size }}</p>
+          </div>
+        </article>
+        <a class="btn btn-success" href="{{ url_for('update', rid=recipe.recipe_id) }}">Update</a>
+        <a class="btn btn-danger" href="{{ url_for('delete', rid=recipe.recipe_id) }}">Delete</a>
+    {% endfor %}
+{% endblock %}

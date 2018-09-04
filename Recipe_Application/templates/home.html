@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for recipe in recipes %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+                <p class="mr-2" style="font-size: 25px; font-family: 'Comic Sans MS', cursive, sans-serif; color: blue;">{{ recipe.category }}</p>
+                <small class="text-muted mr-2">Date created: {{ recipe.date_added }}</small>
+
+            </div>
+            <h2><a class="article-title" href="{{ url_for('view', rid=recipe.recipe_id) }}">{{ recipe.recipe_name }}</a></h2>
+            <p class="article-content">{{ recipe.notes }}</p>
+            <p style="text-align: right; font-size: 15px; font-family: 'Times New Roman', Times, serif;">Click on the recipe name to know more</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        {% for recipe in recipes %}
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Recipe</legend>
+                    <div class="form-group">
+                        {{ form.recipe_name.label(class="form-control-label") }}
+                        {% if form.recipe_name.errors %}
+                            {{ form.recipe_name(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.recipe_name.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.recipe_name(class="form-control form-control-lg", value=recipe.recipe_name) }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.ingredients.label(class="form-control-label") }}
+                        {% if form.ingredients.errors %}
+                            {{ form.ingredients(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.ingredients.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.ingredients(class="form-control form-control-lg", value=recipe.ingredients) }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.instructions.label(class="form-control-label") }}
+                        {% if form.instructions.errors %}
+                            {{ form.instructions(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.instructions.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.instructions(class="form-control form-control-lg", value=recipe.instructions) }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.serving_size.label(class="form-control-label") }}
+                        {% if form.serving_size.errors %}
+                            {{ form.serving_size(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.serving_size.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.serving_size(class="form-control form-control-lg", value=recipe.serving_size) }}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.category.label(class="form-control-label") }}
+                        {{ form.category(class="form-control form-control-lg", selected=recipe.category) }}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.notes.label(class="form-control-label") }}
+                        {% if form.notes.errors %}
+                            {{ form.notes(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.notes.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.notes(class="form-control form-control-lg", value=recipe.notes) }}
+                        {% endif %}
+                    </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+{% endblock %}
