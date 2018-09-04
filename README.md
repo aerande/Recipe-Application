@@ -15,4 +15,4 @@ A python project to implement CRUD operations on recipes
 3. Go to the browser and enter this URL to view the home page: "localhost:5000"
 
 # Home Page
-https://user-images.githubusercontent.com/25068089/45043502-eb758100-b032-11e8-9467-1dc13fccf4e3.png
+![image](https://user-images.githubusercontent.com/25068089/45043622-52933580-b033-11e8-97b7-397932993cc9.png)
